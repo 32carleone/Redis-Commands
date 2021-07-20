@@ -1,0 +1,1 @@
+gcc redis_test.c -lhiredis -o redis_test  && ./redis_test
