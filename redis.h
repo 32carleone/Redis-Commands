@@ -14,9 +14,7 @@ void redis_connect(char* redis_host,int redis_port){
 
 /* SELECT */
 void redis_select(int db){
-      redisReply *reply;
-      reply = redisCommand(redis,"SELECT  %d", db);
-      freeReplyObject(reply);
+      redisCommand(redis,"SELECT  %d", db);
 }
 
 
@@ -55,7 +53,7 @@ redisReply* redis_get(char* redis_key){
 
 /* KEYS */
 redisReply *redis_keys(char* redis_key){
-	sprintf(rcommand,"KEYS %s",redis_key);
+    sprintf(rcommand,"KEYS %s",redis_key);
     return redis_command_array(rcommand);
 }
 
